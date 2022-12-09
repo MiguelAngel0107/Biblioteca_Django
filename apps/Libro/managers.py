@@ -33,3 +33,9 @@ class LibrosManager(models.Manager):
         resultado = self.get(id=2)
 
         return resultado
+
+    def listar_libros_categoria(self, categoria):
+        
+        return self.filter(
+            categoria__id = categoria
+        ).order_by('titulo')

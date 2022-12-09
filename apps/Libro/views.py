@@ -23,4 +23,12 @@ class ListLibros(ListView):
         else:
             return models.Libro.objects.buscar_libros(palabra_clave)
 
+class ListLibros2(ListView):
+    model = models.Libro
+    context_object_name = 'Lista_Libros'
+    template_name = "libro/lista2.html"
+
+    def get_queryset(self):
+        return models.Libro.objects.listar_libros_categoria()
+
 
